@@ -70,6 +70,9 @@ export class ActorComponent implements OnInit {
     this.fullName = '';
     this.bYear = 0;
     this.actorId = '';
+    this.title = '';
+    this.movieYear = 0;
+    this.rating = 0;
   }
 
   onGetMovies() {
