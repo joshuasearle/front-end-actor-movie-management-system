@@ -21,6 +21,9 @@ export class ActorComponent implements OnInit {
   actorsDB: any[] = [];
   moviesDB: any[] = [];
 
+  movieActors: string = '';
+  movieActorsTitle: string = '';
+
   constructor(private dbService: DatabaseService) {}
 
   ngOnInit(): void {
@@ -113,5 +116,10 @@ export class ActorComponent implements OnInit {
     this.dbService.addMovieToActor(this.actor, this.movie).subscribe(() => {
       this.onGetActors();
     });
+  }
+
+  selectMovieForActors(movie) {
+    this.movieActors = movie.actors;
+    this.movieActorsTitle = movie.title;
   }
 }
